@@ -40,7 +40,7 @@
   #error "The SW version of PBcfg.c does not match the expected version"
 
 /* PB structure used with PORT_Init API */
-const PORT_ConfigType PORT_Configuration = {
+const Port_ConfigType Port_Configuration = {
                                              PORTConf_LED1_PORT_NUM,PORTConf_LED1_CHANNEL_NUM,
                                              PORTConf_SW1_PORT_NUM,PORTConf_SW1_CHANNEL_NUM
                                          };

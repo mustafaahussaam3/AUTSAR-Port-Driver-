@@ -71,28 +71,41 @@
 /******************************************************************************
  *                      API Service Id Macros                                 *
  ******************************************************************************/
+/* Service ID for Port setup gpio pin */
+#define PORT_INIT_SID                   (uint8)0x00
 
+/* Service ID for Port Set Pin Direction */
+#define PORT_SET_PIN_DIRECTION_SID      (uint8)0x01
+
+/* Service ID for Refresh Port Direction */
+#define PORT_REFRESH_PORT_DIRECTION_SID (uint8)0x02
+
+/* Service ID for Get Version Info */
+#define PORT_GET_VERSION_INFO_SID       (uint8)0x03
+
+/* Service ID for Port Set Pin Mode */
+#define PORT_SET_PIN_MODE_SID           (uint8)0x04
 /*******************************************************************************
  *                      DET Error Codes                                        *
  *******************************************************************************/
 /* Det code to report invalid Port Pin ID requested */
-#define PORT_E_PARAM_PIN              (uint8)0x0A
+#define PORT_E_PARAM_PIN                (uint8)0x0A
 
 /* Port Pin not configured as changeable */
-#define PORT_E_DIRECTION_UNCHANGEABLE (uint8)0x0B
+#define PORT_E_DIRECTION_UNCHANGEABLE   (uint8)0x0B
 
 /* API Port_Init service called with wrong parameter. */
-#define PORT_E_PARAM_CONFIG           (uint8)0x0C
+#define PORT_E_PARAM_CONFIG             (uint8)0x0C
 
 /* API Port_SetPinMode service called when mode is unchangeable */
-#define PORT_E_PARAM_INVALID_MODE     (uint8)0x0D
-#define PORT_E_MODE_UNCHANGEABLE      (uint8)0x0E
+#define PORT_E_PARAM_INVALID_MODE       (uint8)0x0D
+#define PORT_E_MODE_UNCHANGEABLE        (uint8)0x0E
 
 /* API service called without module initialization */
-#define PORT_E_UNINIT                 (uint8)0x0F
+#define PORT_E_UNINIT                   (uint8)0x0F
 
 /* APIs called with a Null Pointer */
-#define PORT_E_PARAM_POINTER          (uint8)0x10
+#define PORT_E_PARAM_POINTER            (uint8)0x10
 
 
 
@@ -124,11 +137,21 @@
  *                              Module Data Types                              *
  *******************************************************************************/
 
+/*Data type for the symbolic name of a port pin.  */
+typedef uint8 Port_PinType;
+
+/* Different port pin modes.
+ * PORT212: The type Port_PinModeType shall be used with the
+ * function call Port_SetPinMode
+ *
+ */
+typedef uint8 Port_PinModeType;
+
 /* Description: Enum to hold PIN direction */
 typedef enum
 {
-    INPUT,OUTPUT
-}Port_PinDirection;
+     PORT_PIN_IN,PORT_PIN_OUT
+}Port_PinDirectionType;
 
 /* Description: Enum to hold internal resistor type for PIN */
 typedef enum
@@ -139,26 +162,20 @@ typedef enum
 /* Description: Structure to configure each individual PIN:
  *	1. the PORT Which the pin belongs to. 0, 1, 2, 3, 4 or 5
  *	2. the number of the pin in the PORT.
- *      3. the direction of pin --> INPUT or OUTPUT
- *      4. the internal resistor --> Disable, Pull up or Pull down
+ *  3. the direction of pin --> INPUT or OUTPUT
+ *  4. the internal resistor --> Disable, Pull up or Pull down
+ *
+ *  is Hardware Dependent Structure
  */
 typedef struct 
 {
     uint8 port_num; 
     uint8 pin_num; 
-    Port_PinDirection direction;
+    Port_PinDirectionType direction;
     Port_InternalResistor resistor;
     uint8 initial_value;
 }Port_ConfigType;
 
-/*Data type for the symbolic name of a port pin.  */
-typdef uint8 Port_PinType;
-
-/* Different port pin modes.
- * PORT212: The type Port_PinModeType shall be used with the
- * function call Port_SetPinMode
- *  */
-typdef uint8 Port_PinModeType;
 
 /*******************************************************************************
  *                      Function Prototypes                                    *
@@ -166,6 +183,7 @@ typdef uint8 Port_PinModeType;
 
 /************************************************************************************
 * Service Name: Port_SetupGpioPin
+* Servivce ID[hex]: 0x10
 * Sync/Async: Synchronous
 * Reentrancy: reentrant
 * Parameters (in): ConfigPtr - Pointer to post-build configuration data
@@ -178,5 +196,78 @@ typdef uint8 Port_PinModeType;
 *              - Setup the internal resistor for i/p pin
 ************************************************************************************/
 void Port_SetupGpioPin(const Port_ConfigType *ConfigPtr );
+
+/************************************************************************************
+* Service Name: Port_Init
+* Servivce ID[hex]: 0x00
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): ConfigPtr - Pointer to post-build configuration data
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Initializes the Port Driver module.
+************************************************************************************/
+void Port_Init( const Port_ConfigType* ConfigPtr );
+
+/************************************************************************************
+* Service Name: Port_SetPinDirection
+* Servivce ID[hex]: 0x01
+* Sync/Async: Synchronous
+* Reentrancy: reentrant, it shall be configured with same pin number but different port
+* Parameters (in): Pin (Port Pin ID number) - Direction (Port Pin Direction_
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: value: Sets the port pin direction during run time
+************************************************************************************/
+void Port_SetPinDirection( Port_PinType Pin, Port_PinDirectionType Direction );
+
+/************************************************************************************
+* Service Name: Port_SetPinDirection
+* Servivce ID[hex]: 0x02
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): None
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: value: Refreshes port direction.
+************************************************************************************/
+void Port_RefreshPortDirection( void );
+
+/************************************************************************************
+* Service Name: Port_GetVersionInfo
+* Servivce ID[hex]: 0x03
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): None
+* Parameters (inout): None
+* Parameters (out): versioninfo - Pointer to where to store the version information of this module.
+* Return value: None
+* Description: value: Returns the version information of this module.
+************************************************************************************/
+void Port_GetVersionInfo( Std_VersionInfoType* versioninfo );
+
+/************************************************************************************
+* Service Name: Port_SetPinMode
+* Servivce ID[hex]: 0x04
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): Pin - Port Pin ID number
+*                  Mode - New Port Pin mode to be set on port pin.
+* Parameters (inout): None
+* Parameters (out):   None
+* Return value: None
+* Description: value: Sets the port pin mode during run time
+************************************************************************************/
+void Port_SetPinMode( Port_PinType Pin, Port_PinModeType Mode );
+
+/*******************************************************************************
+ *                       External Variables                                    *
+ *******************************************************************************/
+
+/* Extern PB structures to be used by Port and other modules */
+extern const Port_ConfigType Port_Configuration;
 
 #endif /* PORT_H */
