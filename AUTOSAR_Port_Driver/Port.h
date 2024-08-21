@@ -151,6 +151,15 @@ typedef struct
     uint8 initial_value;
 }Port_ConfigType;
 
+/*Data type for the symbolic name of a port pin.  */
+typdef uint8 Port_PinType;
+
+/* Different port pin modes.
+ * PORT212: The type Port_PinModeType shall be used with the
+ * function call Port_SetPinMode
+ *  */
+typdef uint8 Port_PinModeType;
+
 /*******************************************************************************
  *                      Function Prototypes                                    *
  *******************************************************************************/
