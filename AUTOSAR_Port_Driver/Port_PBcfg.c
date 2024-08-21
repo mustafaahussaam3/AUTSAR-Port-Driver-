@@ -38,11 +38,11 @@
  ||  (PORT_PBCFG_SW_MINOR_VERSION != PORT_SW_MINOR_VERSION)\
  ||  (PORT_PBCFG_SW_PATCH_VERSION != PORT_SW_PATCH_VERSION))
   #error "The SW version of PBcfg.c does not match the expected version"
+#endif
 
 /* PB structure used with PORT_Init API */
 const Port_ConfigType Port_Configuration = {
                                              PORTConf_LED1_PORT_NUM,PORTConf_LED1_CHANNEL_NUM,
                                              PORTConf_SW1_PORT_NUM,PORTConf_SW1_CHANNEL_NUM
                                          };
-#endif
 
