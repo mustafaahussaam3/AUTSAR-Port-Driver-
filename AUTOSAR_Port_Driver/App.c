@@ -21,9 +21,6 @@ void Init_Task(void)
     /* Initialize Mcu Driver */
     Mcu_Init();
 
-    /* Initialize Dio Driver */
-    Dio_Init(&Dio_Configuration);
-
     /* Initialize LED Driver */
     Led_Init();
 

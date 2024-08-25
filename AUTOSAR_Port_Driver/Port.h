@@ -136,7 +136,8 @@
 #define PORTB                             1
 #define PORTC                             2
 #define PORTD                             3
-#define PORTF                             4
+#define PORTE                             4
+#define PORTF                             5
 
 #define PIN0                              0
 #define PIN1                              1
@@ -182,35 +183,27 @@ typedef enum
  *
  *  is Hardware Dependent Structure
  */
+typedef struct
+{
+     uint8 port_num;
+     uint8 pin_num;
+     Port_PinDirectionType direction;
+     Port_InternalResistor resistor;
+     uint8 initial_value;
+     Port_Inital_Mode mode;
+}Port_ConfigChannel;
+
 typedef struct 
 {
-    uint8 port_num; 
-    uint8 pin_num; 
-    Port_PinDirectionType direction;
-    Port_InternalResistor resistor;
-    uint8 initial_value;
+
+  Port_ConfigChannel Channels[PORT_CONFIGURED_CHANNELS];
+
 }Port_ConfigType;
 
 
 /*******************************************************************************
  *                      Function Prototypes                                    *
  *******************************************************************************/
-
-/************************************************************************************
-* Service Name: Port_SetupGpioPin
-* Servivce ID[hex]: 0x10
-* Sync/Async: Synchronous
-* Reentrancy: reentrant
-* Parameters (in): ConfigPtr - Pointer to post-build configuration data
-* Parameters (inout): None
-* Parameters (out): None
-* Return value: None
-* Description: Function to Setup the pin configuration:
-*              - Setup the pin as Digital GPIO pin
-*              - Setup the direction of the GPIO pin
-*              - Setup the internal resistor for i/p pin
-************************************************************************************/
-void Port_SetupGpioPin(const Port_ConfigType *ConfigPtr );
 
 /************************************************************************************
 * Service Name: Port_Init
