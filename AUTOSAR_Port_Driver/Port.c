@@ -6,12 +6,25 @@
  *
  * Description: Source file for TM4C123GH6PM Microcontroller - Port Driver.
  *
- * Author: Mohamed Tarek
- * Edited By: Mustafa Hussam Eldin
+ *  Author : Mustafa Hussam Eldin
  ******************************************************************************/
 
 #include "Port.h"
 #include "tm4c123gh6pm_registers.h"
+
+#if (PORT_DEV_ERROR_DETECT == STD_ON)
+
+#include "Det.h"
+/* AUTOSAR Version checking between Det and PORT Modules */
+#if ((DET_AR_MAJOR_VERSION != PORT_AR_RELEASE_MAJOR_VERSION)\
+ || (DET_AR_MINOR_VERSION != PORT_AR_RELEASE_MINOR_VERSION)\
+ || (DET_AR_PATCH_VERSION != PORT_AR_RELEASE_PATCH_VERSION))
+  #error "The AR version of Det.h does not match the expected version"
+#endif
+
+#endif
+
+STATIC uint8 Port_Status = PORT_NOT_INITIALIZED;
 
 /************************************************************************************
 * Service Name: Port_SetupGpioPin
@@ -104,3 +117,87 @@ void Port_SetupGpioPin(const Port_ConfigType * ConfigPtr )
     SET_BIT(*(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIGITAL_ENABLE_REG_OFFSET) , ConfigPtr->pin_num);         /* Set the corresponding bit in the GPIODEN register to enable digital functionality on this pin */
 
 }
+
+/************************************************************************************
+* Service Name: Port_Init
+* Servivce ID[hex]: 0x00
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): ConfigPtr - Pointer to post-build configuration data
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Initializes the Port Driver module.
+************************************************************************************/
+void Port_Init( const Port_ConfigType* ConfigPtr )
+{
+#if (PORT_DEV_ERROR_DETECT == STD_ON)
+    /* check if the input configuration pointer is not a NULL_PTR */
+    if (NULL_PTR == ConfigPtr)
+    {
+        Det_ReportError(PORT_MODULE_ID, PORT_INSTANCE_ID, PORT_INIT_SID,
+                        PORT_E_PARAM_CONFIG);
+    }
+    else
+#endif
+    {
+
+        Port_Status       = PORT_INITIALIZED;
+        volatile uint32 * PortGpio_Ptr = NULL_PTR;
+    }
+
+}
+
+/************************************************************************************
+* Service Name: Port_SetPinDirection
+* Servivce ID[hex]: 0x01
+* Sync/Async: Synchronous
+* Reentrancy: reentrant, it shall be configured with same pin number but different port
+* Parameters (in): Pin (Port Pin ID number) - Direction (Port Pin Direction_
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: value: Sets the port pin direction during run time
+************************************************************************************/
+void Port_SetPinDirection( Port_PinType Pin, Port_PinDirectionType Direction );
+
+/************************************************************************************
+* Service Name: Port_SetPinDirection
+* Servivce ID[hex]: 0x02
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): None
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: value: Refreshes port direction.
+************************************************************************************/
+void Port_RefreshPortDirection( void );
+
+/************************************************************************************
+* Service Name: Port_GetVersionInfo
+* Servivce ID[hex]: 0x03
+* Sync/Async: Synchronous
+* Reentrancy: Non Reentrant
+* Parameters (in): None
+* Parameters (inout): None
+* Parameters (out): versioninfo - Pointer to where to store the version information of this module.
+* Return value: None
+* Description: value: Returns the version information of this module.
+************************************************************************************/
+void Port_GetVersionInfo( Std_VersionInfoType* versioninfo );
+
+/************************************************************************************
+* Service Name: Port_SetPinMode
+* Servivce ID[hex]: 0x04
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): Pin - Port Pin ID number
+*                  Mode - New Port Pin mode to be set on port pin.
+* Parameters (inout): None
+* Parameters (out):   None
+* Return value: None
+* Description: value: Sets the port pin mode during run time
+************************************************************************************/
+void Port_SetPinMode( Port_PinType Pin, Port_PinModeType Mode );
+
