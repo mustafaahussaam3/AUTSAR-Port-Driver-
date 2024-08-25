@@ -6,8 +6,7 @@
  *
  * Description: Header file for TM4C123GH6PM Microcontroller - Port Driver.
  *
- * Author: Mohamed Tarek
- * Edited By: Mustafa Hussam Eldin
+ * Author : Mustafa Hussam Eldin
  ******************************************************************************/
 
 #ifndef PORT_H
@@ -16,7 +15,7 @@
 #define PORT_VENDOR_ID    (1000U)
 
 /* PORT Module Id */
-#define PORT_MODULE_ID    (120U)
+#define PORT_MODULE_ID    (121U)
 
 /* PORT Instance Id */
 #define PORT_INSTANCE_ID  (0U)
@@ -132,6 +131,22 @@
 #define PORT_COMMIT_REG_OFFSET            0x524
 #define PORT_ANALOG_MODE_SEL_REG_OFFSET   0x528
 #define PORT_CTL_REG_OFFSET               0x52C
+
+#define PORTA                             0
+#define PORTB                             1
+#define PORTC                             2
+#define PORTD                             3
+#define PORTF                             4
+
+#define PIN0                              0
+#define PIN1                              1
+#define PIN2                              2
+#define PIN3                              3
+#define PIN4                              4
+#define PIN5                              5
+#define PIN6                              6
+#define PIN7                              7
+
 
 /*******************************************************************************
  *                              Module Data Types                              *
@@ -266,7 +281,6 @@ void Port_SetPinMode( Port_PinType Pin, Port_PinModeType Mode );
 /*******************************************************************************
  *                       External Variables                                    *
  *******************************************************************************/
-
 /* Extern PB structures to be used by Port and other modules */
 extern const Port_ConfigType Port_Configuration;
 

@@ -155,6 +155,7 @@ typedef struct
   Dio_PortType PortIndex;
 } Dio_ChannelGroupType;
 
+// no need
 typedef struct
 {
 	/* Member contains the ID of the Port that this channel belongs to */
@@ -164,6 +165,7 @@ typedef struct
 }Dio_ConfigChannel;
 
 /* Data Structure required for initializing the Dio Driver */
+/////!!!  no need after implemting port driver
 typedef struct Dio_ConfigType
 {
 	Dio_ConfigChannel Channels[DIO_CONFIGURED_CHANNLES];

@@ -1,0 +1,144 @@
+/.metadata/
+.jxbrowser.userdata/Default/Code Cache/js/67ae84b6b364d415_0
+.jxbrowser.userdata/Default/Code Cache/js/9ee8332ee62edb48_0
+.jxbrowser.userdata/Default/Code Cache/js/8d6b5f4dd9496c6c_0
+.jxbrowser.userdata/Default/Code Cache/js/b9302c565989c4bf_0
+.jxbrowser.userdata/Default/Code Cache/js/df9ca7d4ce476a9c_0
+.jxbrowser.userdata/Default/Code Cache/js/c1e59674b2fbe436_0
+.jxbrowser.userdata/Default/Code Cache/js/c4fb02e0351f7eee_0
+.jxbrowser.userdata/Default/Code Cache/js/ea4bf65df85b44f0_0
+.jxbrowser.userdata/Default/Code Cache/js/eb1ec5e48a9dc3c9_0
+.jxbrowser.userdata/Default/Code Cache/js/index-dir/the-real-index
+.jxbrowser.userdata/Default/Code Cache/js/ee0ab15c54752613_0
+.jxbrowser.userdata/Default/Code Cache/js/index
+.jxbrowser.userdata/Default/Code Cache/wasm/index-dir/the-real-index
+.jxbrowser.userdata/Default/commerce_subscription_db/LOCK
+.jxbrowser.userdata/Default/commerce_subscription_db/LOG
+.jxbrowser.userdata/Default/coupon_db/LOCK
+.jxbrowser.userdata/Default/Code Cache/wasm/index
+.jxbrowser.userdata/Default/coupon_db/LOG
+.jxbrowser.userdata/Default/DawnCache/data_0
+.jxbrowser.userdata/Default/DawnCache/data_1
+.jxbrowser.userdata/Default/DawnCache/index
+.jxbrowser.userdata/Default/DawnCache/data_3
+.jxbrowser.userdata/Default/DawnCache/data_2
+.jxbrowser.userdata/Default/Download Service/EntryDB/LOCK
+.jxbrowser.userdata/Default/Extension Scripts/000003.log
+.jxbrowser.userdata/Default/Download Service/EntryDB/LOG
+.jxbrowser.userdata/Default/Extension Scripts/CURRENT
+.jxbrowser.userdata/Default/Extension Scripts/LOCK
+.jxbrowser.userdata/Default/Extension Scripts/LOG
+.jxbrowser.userdata/Default/Extension Scripts/MANIFEST-000001
+.jxbrowser.userdata/Default/Extension State/000003.log
+.jxbrowser.userdata/Default/Extension State/CURRENT
+.jxbrowser.userdata/Default/Extension State/MANIFEST-000001
+.jxbrowser.userdata/Default/Extension State/LOCK
+.jxbrowser.userdata/Default/Extension State/LOG
+.jxbrowser.userdata/Default/Favicons
+.jxbrowser.userdata/Default/Feature Engagement Tracker/AvailabilityDB/LOCK
+.jxbrowser.userdata/Default/Favicons-journal
+.jxbrowser.userdata/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+.jxbrowser.userdata/Default/Feature Engagement Tracker/EventDB/LOG
+.jxbrowser.userdata/Default/Feature Engagement Tracker/EventDB/LOCK
+.jxbrowser.userdata/Default/GCM Store/Encryption/000003.log
+.jxbrowser.userdata/Default/GCM Store/Encryption/LOCK
+.jxbrowser.userdata/Default/GCM Store/Encryption/CURRENT
+.jxbrowser.userdata/Default/GCM Store/Encryption/LOG
+.jxbrowser.userdata/Default/GCM Store/Encryption/MANIFEST-000001
+.jxbrowser.userdata/Default/GPUCache/data_1
+.jxbrowser.userdata/Default/GPUCache/data_0
+.jxbrowser.userdata/Default/GPUCache/data_3
+.jxbrowser.userdata/Default/GPUCache/data_2
+.jxbrowser.userdata/Default/GPUCache/index
+.jxbrowser.userdata/Default/heavy_ad_intervention_opt_out.db
+.jxbrowser.userdata/Default/heavy_ad_intervention_opt_out.db-journal
+.jxbrowser.userdata/Default/History
+.jxbrowser.userdata/Default/History-journal
+.jxbrowser.userdata/Default/Local Storage/leveldb/000003.log
+.jxbrowser.userdata/Default/Local Storage/leveldb/CURRENT
+.jxbrowser.userdata/Default/Local Storage/leveldb/LOCK
+.jxbrowser.userdata/Default/Local Storage/leveldb/LOG
+.jxbrowser.userdata/Default/Local Storage/leveldb/MANIFEST-000001
+.jxbrowser.userdata/Default/LOCK
+.jxbrowser.userdata/Default/LOG
+.jxbrowser.userdata/Default/Login Data
+.jxbrowser.userdata/Default/Login Data For Account
+.jxbrowser.userdata/Default/Login Data For Account-journal
+.jxbrowser.userdata/Default/Login Data-journal
+.jxbrowser.userdata/Default/Network Action Predictor
+.jxbrowser.userdata/Default/Network Action Predictor-journal
+.jxbrowser.userdata/Default/Network/Cookies
+.jxbrowser.userdata/Default/Network/Cookies-journal
+.jxbrowser.userdata/Default/Network/Network Persistent State
+.jxbrowser.userdata/Default/Network/NetworkDataMigrated
+.jxbrowser.userdata/Default/Network/Reporting and NEL
+.jxbrowser.userdata/Default/Network/Reporting and NEL-journal
+.jxbrowser.userdata/Default/Network/TransportSecurity
+.jxbrowser.userdata/Default/optimization_guide_hint_cache_store/LOCK
+.jxbrowser.userdata/Default/optimization_guide_hint_cache_store/LOG
+.jxbrowser.userdata/Default/optimization_guide_model_metadata_store/LOG
+.jxbrowser.userdata/Default/optimization_guide_model_metadata_store/LOCK
+.jxbrowser.userdata/Default/Preferences
+.jxbrowser.userdata/Default/PreferredApps
+.jxbrowser.userdata/Default/Safe Browsing Network/NetworkDataMigrated
+.jxbrowser.userdata/Default/README
+.jxbrowser.userdata/Default/Safe Browsing Network/Safe Browsing Cookies
+.jxbrowser.userdata/Default/Safe Browsing Network/Safe Browsing Cookies-journal
+.jxbrowser.userdata/Default/Secure Preferences
+.jxbrowser.userdata/Default/Segmentation Platform/SegmentInfoDB/LOCK
+.jxbrowser.userdata/Default/Segmentation Platform/SegmentInfoDB/LOG
+.jxbrowser.userdata/Default/Segmentation Platform/SignalDB/LOCK
+.jxbrowser.userdata/Default/Segmentation Platform/SignalDB/LOG
+.jxbrowser.userdata/Default/Segmentation Platform/SignalStorageConfigDB/LOCK
+.jxbrowser.userdata/Default/Segmentation Platform/SignalStorageConfigDB/LOG
+.jxbrowser.userdata/Default/Session Storage/CURRENT
+.jxbrowser.userdata/Default/Session Storage/000003.log
+.jxbrowser.userdata/Default/Session Storage/LOCK
+.jxbrowser.userdata/Default/Session Storage/LOG
+.jxbrowser.userdata/Default/Session Storage/MANIFEST-000001
+.jxbrowser.userdata/Default/Sessions/Session_13368720048789743
+.jxbrowser.userdata/Default/shared_proto_db/000003.log
+.jxbrowser.userdata/Default/shared_proto_db/CURRENT
+.jxbrowser.userdata/Default/shared_proto_db/LOG
+.jxbrowser.userdata/Default/shared_proto_db/LOCK
+.jxbrowser.userdata/Default/shared_proto_db/MANIFEST-000001
+.jxbrowser.userdata/Default/shared_proto_db/metadata/000003.log
+.jxbrowser.userdata/Default/shared_proto_db/metadata/CURRENT
+.jxbrowser.userdata/Default/shared_proto_db/metadata/MANIFEST-000001
+.jxbrowser.userdata/Default/shared_proto_db/metadata/LOCK
+.jxbrowser.userdata/Default/shared_proto_db/metadata/LOG
+.jxbrowser.userdata/Default/Shortcuts
+.jxbrowser.userdata/Default/Shortcuts-journal
+.jxbrowser.userdata/Default/Site Characteristics Database/000003.log
+.jxbrowser.userdata/Default/Site Characteristics Database/LOCK
+.jxbrowser.userdata/Default/Site Characteristics Database/LOG
+.jxbrowser.userdata/Default/Site Characteristics Database/CURRENT
+.jxbrowser.userdata/Default/Site Characteristics Database/MANIFEST-000001
+.jxbrowser.userdata/Default/Sync Data/LevelDB/CURRENT
+.jxbrowser.userdata/Default/Sync Data/LevelDB/000003.log
+.jxbrowser.userdata/Default/Sync Data/LevelDB/LOCK
+.jxbrowser.userdata/Default/Sync Data/LevelDB/LOG
+.jxbrowser.userdata/Default/Sync Data/LevelDB/MANIFEST-000001
+.jxbrowser.userdata/Default/Top Sites
+.jxbrowser.userdata/Default/Top Sites-journal
+.jxbrowser.userdata/Default/Web Data
+.jxbrowser.userdata/Default/Visited Links
+.jxbrowser.userdata/Default/Web Data-journal
+.jxbrowser.userdata/First Run
+.jxbrowser.userdata/GrShaderCache/data_0
+.jxbrowser.userdata/GrShaderCache/data_2
+.jxbrowser.userdata/GrShaderCache/data_1
+.jxbrowser.userdata/GrShaderCache/data_3
+.jxbrowser.userdata/GrShaderCache/index
+.jxbrowser.userdata/Last Browser
+.jxbrowser.userdata/Last Version
+.jxbrowser.userdata/Local State
+.jxbrowser.userdata/Local Storage - EXT/http_127.0.0.1.localstorage
+.jxbrowser.userdata/lockfile
+.jxbrowser.userdata/ShaderCache/data_0
+.jxbrowser.userdata/Module Info Cache
+.jxbrowser.userdata/ShaderCache/data_1
+.jxbrowser.userdata/ShaderCache/data_2
+.jxbrowser.userdata/ShaderCache/data_3
+.jxbrowser.userdata/ShaderCache/index
+.jxbrowser.userdata/Variations

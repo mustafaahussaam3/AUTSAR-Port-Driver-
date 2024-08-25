@@ -52,7 +52,7 @@ void Port_SetupGpioPin(const Port_ConfigType * ConfigPtr )
         *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_LOCK_REG_OFFSET) = 0x4C4F434B;                     /* Unlock the GPIOCR register */   
         SET_BIT(*(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_COMMIT_REG_OFFSET) , ConfigPtr->pin_num);  /* Set the corresponding bit in GPIOCR register to allow changes on this pin */
     }
-    else if( (ConfigPtr->port_num == 2) && (ConfigPtr->pin_num <= 3) ) /* PC0 to PC3 */
+    else if( (ConfigPtr->port_num == 2) && (ConfigPtr->pin_num <= 3)) /* PC0 to PC3 */
     {
         /* Do Nothing ...  this is the JTAG pins */
     }
