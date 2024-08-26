@@ -7,30 +7,22 @@
  * Description: Source file for Button Module.
  *
  * Author: Mohamed Tarek
+ * Edited By: Mustafa Hussam Eldin
  ******************************************************************************/
 #include "Dio.h"
 #include "Port.h"
 #include "Button.h"
 
 /* Button Configurations Structure */
-static Port_ConfigType g_Button_Config;
 
 /* Global variable to hold the button state */
 static uint8 g_button_state = BUTTON_RELEASED;
 
-/*******************************************************************************************************************/
-/* Description: Called by the Button_Init function (only) used to fill the Button configurations structure */
-static void Button_FillConfigurations(void)
-{
-    g_Button_Config.resistor  = PULL_UP;                 /* Enable Intrnal pull up at this pin */
-    g_Button_Config.initial_value  = BUTTON_RELEASED;    /* Button is released */
-}
 
 /*******************************************************************************************************************/
 void Button_Init(void)
 {
-    Button_FillConfigurations();
-    Port_SetupGpioPin(&g_Button_Config);
+    Port_Init(&Port_Configuration);
 }
 
 /*******************************************************************************************************************/

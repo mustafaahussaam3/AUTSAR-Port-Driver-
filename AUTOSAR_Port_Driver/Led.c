@@ -12,13 +12,11 @@
 #include "Dio.h"
 #include "Led.h"
 
-/* LED Configurations Structure */
-static Port_ConfigType  g_LED_Config;
 
 /*********************************************************************************************/
 void Led_Init(void)
 {
-    Port_Init(&g_LED_Config->Channels[DioConf_LED1_CHANNEL_ID_INDEX]);
+    Port_Init(&Port_Configuration);
 }
 
 /*********************************************************************************************/

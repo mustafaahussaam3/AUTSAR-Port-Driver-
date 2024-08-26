@@ -132,21 +132,21 @@
 #define PORT_ANALOG_MODE_SEL_REG_OFFSET   0x528
 #define PORT_CTL_REG_OFFSET               0x52C
 
-#define PORTA                             0
-#define PORTB                             1
-#define PORTC                             2
-#define PORTD                             3
-#define PORTE                             4
-#define PORTF                             5
+#define PORTA                             (0U)
+#define PORTB                             (1U)
+#define PORTC                             (2U)
+#define PORTD                             (3U)
+#define PORTE                             (4U)
+#define PORTF                             (5U)
 
-#define PIN0                              0
-#define PIN1                              1
-#define PIN2                              2
-#define PIN3                              3
-#define PIN4                              4
-#define PIN5                              5
-#define PIN6                              6
-#define PIN7                              7
+#define PIN0                              (0U)
+#define PIN1                              (1U)
+#define PIN2                              (2U)
+#define PIN3                              (3U)
+#define PIN4                              (4U)
+#define PIN5                              (5U)
+#define PIN6                              (6U)
+#define PIN7                              (7U)
 
 
 /*******************************************************************************
@@ -195,9 +195,7 @@ typedef struct
 
 typedef struct 
 {
-
   Port_ConfigChannel Channels[PORT_CONFIGURED_CHANNELS];
-
 }Port_ConfigType;
 
 

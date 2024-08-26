@@ -113,9 +113,7 @@ typedef enum {
 #define DioConf_LED1_CHANNEL_ID_INDEX        (uint8)0x23
 #define DioConf_PF2_CHANNEL_ID_INDEX         (uint8)0x24
 #define DioConf_PF3_CHANNEL_ID_INDEX         (uint8)0x25
-#define DioConf_PF4_CHANNEL_ID_INDEX         (uint8)0x26
-
-
+#define DioConf_SW1_CHANNEL_ID_INDEX         (uint8)0x26
 uint16 PortPinId;
 uint16 PortNumberOfPortPins;
 
