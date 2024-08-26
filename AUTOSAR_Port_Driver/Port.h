@@ -183,6 +183,7 @@ typedef enum
  *
  *  is Hardware Dependent Structure
  */
+
 typedef struct
 {
      uint8 port_num;

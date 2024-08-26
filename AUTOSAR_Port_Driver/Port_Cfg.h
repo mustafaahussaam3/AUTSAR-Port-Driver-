@@ -74,46 +74,7 @@ typedef enum {
 /* Parameter to indicate if the mode is changeable on a port pin during runtime */
 #define PORT_PIN_MODE_CHANGEABLE            (STD_OFF)
 
-/* Channel Index in the array of structures in Port_PBcfg.c */
-#define DioConf_PA0_CHANNEL_ID_INDEX         (uint8)0x00
-#define DioConf_PA1_CHANNEL_ID_INDEX         (uint8)0x01
-#define DioConf_PA2_CHANNEL_ID_INDEX         (uint8)0x02
-#define DioConf_PA3_CHANNEL_ID_INDEX         (uint8)0x03
-#define DioConf_PA4_CHANNEL_ID_INDEX         (uint8)0x04
-#define DioConf_PA5_CHANNEL_ID_INDEX         (uint8)0x05
-#define DioConf_PA6_CHANNEL_ID_INDEX         (uint8)0x06
-#define DioConf_PA7_CHANNEL_ID_INDEX         (uint8)0x07
-#define DioConf_PB0_CHANNEL_ID_INDEX         (uint8)0x08
-#define DioConf_PB1_CHANNEL_ID_INDEX         (uint8)0x09
-#define DioConf_PB2_CHANNEL_ID_INDEX         (uint8)0x0A
-#define DioConf_PB3_CHANNEL_ID_INDEX         (uint8)0x0B
-#define DioConf_PB4_CHANNEL_ID_INDEX         (uint8)0x0C
-#define DioConf_PB5_CHANNEL_ID_INDEX         (uint8)0x0D
-#define DioConf_PB6_CHANNEL_ID_INDEX         (uint8)0x0E
-#define DioConf_PB7_CHANNEL_ID_INDEX         (uint8)0x0F
-#define DioConf_PC4_CHANNEL_ID_INDEX         (uint8)0x10
-#define DioConf_PC5_CHANNEL_ID_INDEX         (uint8)0x11
-#define DioConf_PC6_CHANNEL_ID_INDEX         (uint8)0x12
-#define DioConf_PC7_CHANNEL_ID_INDEX         (uint8)0x13
-#define DioConf_PD0_CHANNEL_ID_INDEX         (uint8)0x14
-#define DioConf_PD1_CHANNEL_ID_INDEX         (uint8)0x15
-#define DioConf_PD2_CHANNEL_ID_INDEX         (uint8)0x16
-#define DioConf_PD3_CHANNEL_ID_INDEX         (uint8)0x17
-#define DioConf_PD4_CHANNEL_ID_INDEX         (uint8)0x18
-#define DioConf_PD5_CHANNEL_ID_INDEX         (uint8)0x19
-#define DioConf_PD6_CHANNEL_ID_INDEX         (uint8)0x1A
-#define DioConf_PD7_CHANNEL_ID_INDEX         (uint8)0x1B
-#define DioConf_PE0_CHANNEL_ID_INDEX         (uint8)0x1C
-#define DioConf_PE1_CHANNEL_ID_INDEX         (uint8)0x1D
-#define DioConf_PE2_CHANNEL_ID_INDEX         (uint8)0x1E
-#define DioConf_PE3_CHANNEL_ID_INDEX         (uint8)0x1F
-#define DioConf_PE4_CHANNEL_ID_INDEX         (uint8)0x20
-#define DioConf_PE5_CHANNEL_ID_INDEX         (uint8)0x21
-#define DioConf_PF0_CHANNEL_ID_INDEX         (uint8)0x22
-#define DioConf_LED1_CHANNEL_ID_INDEX        (uint8)0x23
-#define DioConf_PF2_CHANNEL_ID_INDEX         (uint8)0x24
-#define DioConf_PF3_CHANNEL_ID_INDEX         (uint8)0x25
-#define DioConf_SW1_CHANNEL_ID_INDEX         (uint8)0x26
+
 uint16 PortPinId;
 uint16 PortNumberOfPortPins;
 

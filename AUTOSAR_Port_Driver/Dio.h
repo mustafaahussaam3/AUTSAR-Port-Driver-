@@ -54,7 +54,6 @@
 
 /* Dio Pre-Compile Configuration Header file */
 #include "Dio_Cfg.h"
-
 /* AUTOSAR Version checking between Dio_Cfg.h and Dio.h files */
 #if ((DIO_CFG_AR_RELEASE_MAJOR_VERSION != DIO_AR_RELEASE_MAJOR_VERSION)\
  ||  (DIO_CFG_AR_RELEASE_MINOR_VERSION != DIO_AR_RELEASE_MINOR_VERSION)\
@@ -205,6 +204,5 @@ void Dio_GetVersionInfo(Std_VersionInfoType *versioninfo);
  *******************************************************************************/
 
 /* Extern PB structures to be used by Dio and other modules */
-extern const Dio_ConfigType Dio_Configuration;
 
 #endif /* DIO_H */

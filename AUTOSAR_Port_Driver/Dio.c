@@ -11,7 +11,7 @@
 
 #include "Dio.h"
 #include "Dio_Regs.h"
-
+#include "Port.h"
 #if (DIO_DEV_ERROR_DETECT == STD_ON)
 
 #include "Det.h"
@@ -24,40 +24,8 @@
 
 #endif
 
-STATIC const Dio_ConfigChannel * Dio_PortChannels = NULL_PTR;
-STATIC uint8 Dio_Status = DIO_NOT_INITIALIZED;
 
-/************************************************************************************
-* Service Name: Dio_Init
-* Service ID[hex]: 0x10
-* Sync/Async: Synchronous
-* Reentrancy: Non reentrant
-* Parameters (in): ConfigPtr - Pointer to post-build configuration data
-* Parameters (inout): None
-* Parameters (out): None
-* Return value: None
-* Description: Function to Initialize the Dio module.
-************************************************************************************/
-void Dio_Init(const Dio_ConfigType * ConfigPtr)
-{
-#if (DIO_DEV_ERROR_DETECT == STD_ON)
-	/* check if the input configuration pointer is not a NULL_PTR */
-	if (NULL_PTR == ConfigPtr)
-	{
-		Det_ReportError(DIO_MODULE_ID, DIO_INSTANCE_ID, DIO_INIT_SID,
-		     DIO_E_PARAM_CONFIG);
-	}
-	else
-#endif
-	{
-		/*
-		 * Set the module state to initialized and point to the PB configuration structure using a global pointer.
-		 * This global pointer is global to be used by other functions to read the PB configuration structures
-		 */
-		Dio_Status       = DIO_INITIALIZED;
-		Dio_PortChannels = ConfigPtr->Channels; /* address of the first Channels structure --> Channels[0] */
-	}
-}
+STATIC uint8 Dio_Status = DIO_NOT_INITIALIZED;
 
 /************************************************************************************
 * Service Name: Dio_WriteChannel
@@ -106,7 +74,7 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 	if(FALSE == error)
 	{
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
-		switch(Dio_PortChannels[ChannelId].Port_Num)
+		switch(Port_Configuration.Channels[ChannelId].port_num)
 		{
             case 0:    Port_Ptr = &GPIO_PORTA_DATA_REG;
 		               break;
@@ -124,12 +92,12 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 		if(Level == STD_HIGH)
 		{
 			/* Write Logic High */
-			SET_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num);
+			SET_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num);
 		}
 		else if(Level == STD_LOW)
 		{
 			/* Write Logic Low */
-			CLEAR_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num);
+			CLEAR_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num);
 		}
 	}
 	else
@@ -186,7 +154,7 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 	if(FALSE == error)
 	{
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
-		switch(Dio_PortChannels[ChannelId].Port_Num)
+		switch(Port_Configuration.Channels[ChannelId].port_num)
 		{
             case 0:    Port_Ptr = &GPIO_PORTA_DATA_REG;
 		               break;
@@ -202,7 +170,7 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 		               break;
 		}
 		/* Read the required channel */
-		if(GET_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num) == STD_HIGH)
+		if(GET_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num) == STD_HIGH)
 		{
 			output = STD_HIGH;
 		}
@@ -305,7 +273,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 	if(FALSE == error)
 	{
 		/* Point to the correct PORT register according to the Port Id stored in the Port_Num member */
-		switch(Dio_PortChannels[ChannelId].Port_Num)
+		switch(Port_Configuration.Channels[ChannelId].port_num)
 		{
             case 0:    Port_Ptr = &GPIO_PORTA_DATA_REG;
 		               break;
@@ -321,14 +289,14 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 		               break;
 		}
 		/* Read the required channel and write the required level */
-		if(GET_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num) == STD_HIGH)
+		if(GET_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num) == STD_HIGH)
 		{
-			CLEAR_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num);
+			CLEAR_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num);
 			output = STD_LOW;
 		}
 		else
 		{
-			SET_BIT(*Port_Ptr,Dio_PortChannels[ChannelId].Ch_Num);
+			SET_BIT(*Port_Ptr,Port_Configuration.Channels[ChannelId].pin_num);
 			output = STD_HIGH;
 		}
 	}
