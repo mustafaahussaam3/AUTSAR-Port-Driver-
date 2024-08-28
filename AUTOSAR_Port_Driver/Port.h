@@ -192,7 +192,9 @@ typedef struct
      Port_InternalResistor resistor;
      uint8 initial_value;
      Port_Inital_Mode mode;
+
 }Port_ConfigChannel;
+
 
 typedef struct 
 {
@@ -228,7 +230,9 @@ void Port_Init( const Port_ConfigType* ConfigPtr );
 * Return value: None
 * Description: value: Sets the port pin direction during run time
 ************************************************************************************/
+#if (PORT_SET_PIN_DIRECTION_API == STD_ON)
 void Port_SetPinDirection( Port_PinType Pin, Port_PinDirectionType Direction );
+#endif
 
 /************************************************************************************
 * Service Name: Port_SetPinDirection
@@ -254,8 +258,9 @@ void Port_RefreshPortDirection( void );
 * Return value: None
 * Description: value: Returns the version information of this module.
 ************************************************************************************/
+#if (PORT_VERSION_INFO_API == STD_ON)
 void Port_GetVersionInfo( Std_VersionInfoType* versioninfo );
-
+#endif
 /************************************************************************************
 * Service Name: Port_SetPinMode
 * Servivce ID[hex]: 0x04
@@ -268,8 +273,9 @@ void Port_GetVersionInfo( Std_VersionInfoType* versioninfo );
 * Return value: None
 * Description: value: Sets the port pin mode during run time
 ************************************************************************************/
+#if (PORT_PIN_MODE_CHANGEABLE == STD_ON)
 void Port_SetPinMode( Port_PinType Pin, Port_PinModeType Mode );
-
+#endif
 /*******************************************************************************
  *                       External Variables                                    *
  *******************************************************************************/

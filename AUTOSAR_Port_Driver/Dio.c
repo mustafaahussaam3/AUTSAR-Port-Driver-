@@ -7,6 +7,7 @@
  * Description: Source file for TM4C123GH6PM Microcontroller - Dio Driver
  *
  * Author: Mohamed Tarek
+ *   Edited By: Mustafa Hussam Eldin
  ******************************************************************************/
 
 #include "Dio.h"
@@ -43,17 +44,6 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 	boolean error = FALSE;
 
 #if (DIO_DEV_ERROR_DETECT == STD_ON)
-	/* Check if the Driver is initialized before using this function */
-	if (DIO_NOT_INITIALIZED == Dio_Status)
-	{
-		Det_ReportError(DIO_MODULE_ID, DIO_INSTANCE_ID,
-				DIO_WRITE_CHANNEL_SID, DIO_E_UNINIT);
-		error = TRUE;
-	}
-	else
-	{
-		/* No Action Required */
-	}
 	/* Check if the used channel is within the valid range */
 	if (DIO_CONFIGURED_CHANNLES <= ChannelId)
 	{
@@ -123,18 +113,6 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 	boolean error = FALSE;
 
 #if (DIO_DEV_ERROR_DETECT == STD_ON)
-	/* Check if the Driver is initialized before using this function */
-	if (DIO_NOT_INITIALIZED == Dio_Status)
-	{
-		Det_ReportError(DIO_MODULE_ID, DIO_INSTANCE_ID,
-				DIO_READ_CHANNEL_SID, DIO_E_UNINIT);
-		error = TRUE;
-	}
-	else
-	{
-		/* No Action Required */
-	}
-	/* Check if the used channel is within the valid range */
 	if (DIO_CONFIGURED_CHANNLES <= ChannelId)
 	{
 
@@ -242,17 +220,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 	boolean error = FALSE;
 
 #if (DIO_DEV_ERROR_DETECT == STD_ON)
-	/* Check if the Driver is initialized before using this function */
-	if (DIO_NOT_INITIALIZED == Dio_Status)
-	{
-		Det_ReportError(DIO_MODULE_ID, DIO_INSTANCE_ID,
-				DIO_FLIP_CHANNEL_SID, DIO_E_UNINIT);
-		error = TRUE;
-	}
-	else
-	{
-		/* No Action Required */
-	}
+
 	/* Check if the used channel is within the valid range */
 	if (DIO_CONFIGURED_CHANNLES <= ChannelId)
 	{

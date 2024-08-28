@@ -27,7 +27,7 @@
 #define DIO_CFG_AR_RELEASE_PATCH_VERSION     (3U)
 
 /* Pre-compile option for Development Error Detect */
-#define DIO_DEV_ERROR_DETECT                (STD_OFF)
+#define DIO_DEV_ERROR_DETECT                (STD_ON)
 
 /* Pre-compile option for Version Info API */
 #define DIO_VERSION_INFO_API                (STD_OFF)

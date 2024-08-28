@@ -28,7 +28,7 @@
 #define PORT_CFG_AR_RELEASE_PATCH_VERSION     (3U)
 
 typedef enum {
-    PORT_PIN_MODE_DIO   =  0,
+    PORT_PIN_MODE_DIO   =  0,  PORT_PIN_MODE_ADC = 0,
     PORT_PIN_MODE_UART  =  1,  PORT_PIN_MODE_SSI1  = 1,
     PORT_PIN_MODE_SSI   =  2,  PORT_PIN_MODE_UART1C= 2,
     PORT_PIN_MODE_I2C   =  3,  PORT_PIN_MODE_CAN0  = 3,
@@ -40,10 +40,10 @@ typedef enum {
 }Port_Inital_Mode;
 
 /* Number of Configured Channel in Port */
-#define PORT_CONFIGURED_CHANNELS            39U
+#define PORT_CONFIGURED_CHANNELS             (39U)
 
 /* Pre-compile option for Set Pin Direction API */
-#define PORT_SET_PIN_DIRECTION_API          (STD_ON)
+#define PORT_SET_PIN_DIRECTION_API          (STD_OFF)
 
 /* Pre-compile option for Version Info API */
 #define PORT_VERSION_INFO_API               (STD_ON)
@@ -52,7 +52,7 @@ typedef enum {
 #define PORT_DEV_ERROR_DETECT               (STD_ON)
 
 /* Pre-compile  switch to enable / disable the use of the function Port_SetPinMode(). */
-#define PORT_SET_PIN_MODE_API               (STD_ON)
+#define PORT_SET_PIN_MODE_API               (STD_OFF)
 
 /* Pre-compile to The initial direction of the pin (IN or OUT) */
 #define PORT_PIN_DIRECTION                 PORT_PIN_IN
@@ -61,7 +61,7 @@ typedef enum {
 #define PORT_PIN_DIRECTION_CHANGEABLE       (STD_OFF)
 
 /* Port pin mode from mode list for use with Port_Init() function */
-#define PORT_PIN_INITIAL_MODE            PORT_PIN_MODE_DIO
+#define PORT_PIN_INITIAL_MODE           PORT_PIN_MODE_DIO
 
 /* Port Pin Level value from Port pin list. */
 #define PORT_PIN_LEVEL_HIGH                 (STD_HIGH)
@@ -69,11 +69,10 @@ typedef enum {
 #define PORT_PIN_LEVEL_VALUE             PORT_PIN_LEVEL_HIGH
 
 /* Port pin mode from mode list */
-#define PORT_PIN_MODE                     PORT_PIN_MODE_DIO
+#define PORT_PIN_MODE
 
 /* Parameter to indicate if the mode is changeable on a port pin during runtime */
 #define PORT_PIN_MODE_CHANGEABLE            (STD_OFF)
-
 
 uint16 PortPinId;
 uint16 PortNumberOfPortPins;
