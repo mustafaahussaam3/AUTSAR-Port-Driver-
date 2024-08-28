@@ -69,7 +69,7 @@ typedef enum {
 #define PORT_PIN_LEVEL_VALUE             PORT_PIN_LEVEL_HIGH
 
 /* Port pin mode from mode list */
-#define PORT_PIN_MODE
+#define PORT_PIN_MODE                   PORT_PIN_MODE_DIO
 
 /* Parameter to indicate if the mode is changeable on a port pin during runtime */
 #define PORT_PIN_MODE_CHANGEABLE            (STD_OFF)

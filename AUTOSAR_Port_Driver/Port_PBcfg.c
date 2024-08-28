@@ -82,7 +82,7 @@
                                              PORTE, PIN5, PORT_PIN_IN, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE,  /*33 PE5 */
 
                                              PORTF, PIN0, PORT_PIN_IN, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE,  /*34 PF0 */ /*  NMI PIN */
-                                             PORTF, PIN1, PORT_PIN_OUT, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE,  /*35 PF1 */     /* Internal Led */
+                                             PORTF, PIN1, PORT_PIN_OUT, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE, /*35 PF1 */     /* Internal Led */
                                              PORTF, PIN2, PORT_PIN_IN, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE,  /*36 PF2 */
                                              PORTF, PIN3, PORT_PIN_IN, OFF, STD_IDLE, PORT_PIN_INITIAL_MODE,  /*37 PF3 */
                                              PORTF, PIN4, PORT_PIN_IN, PULL_UP, STD_HIGH, PORT_PIN_INITIAL_MODE   /*38 PF4 */ /* Internal Switch */
